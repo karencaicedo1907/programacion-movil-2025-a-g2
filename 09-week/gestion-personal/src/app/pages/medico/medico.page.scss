@@ -1,0 +1,79 @@
+/* Estilos Generales */
+form {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  ion-item {
+    margin-bottom: 12px;
+  }
+  
+  ion-button {
+    margin-top: 16px;
+    width: 100%;
+  }
+  
+  /* Estilo para Médico */
+  .medico-form {
+    background-color: #e1f7fa; /* Fondo azul claro */
+  }
+  
+  .medico-form ion-label {
+    color: #006064; /* Etiquetas color azul oscuro */
+  }
+  
+  .medico-form ion-input {
+    border-color: #006064; /* Borde azul oscuro */
+  }
+  
+  /* Estilo para Enfermero */
+  .enfermero-form {
+    background-color: #fff9c4; /* Fondo amarillo claro */
+  }
+  
+  .enfermero-form ion-label {
+    color: #f57f17; /* Etiquetas color naranja */
+  }
+  
+  .enfermero-form ion-input {
+    border-color: #f57f17; /* Borde naranja */
+  }
+  
+  /* Estilo para Recepcionista */
+  .recepcionista-form {
+    background-color: #c8e6c9; /* Fondo verde claro */
+  }
+  
+  .recepcionista-form ion-label {
+    color: #388e3c; /* Etiquetas color verde oscuro */
+  }
+  
+  .recepcionista-form ion-input {
+    border-color: #388e3c; /* Borde verde oscuro */
+  }
+  
+  /* Estilo para Paciente */
+  .paciente-form {
+    background-color: #ffecb3; /* Fondo amarillo pastel */
+  }
+  
+  .paciente-form ion-label {
+    color: #fbc02d; /* Etiquetas color amarillo oscuro */
+  }
+  
+  .paciente-form ion-input {
+    border-color: #fbc02d; /* Borde amarillo oscuro */
+  }
+  
+  /* Estilo para Botones */
+  ion-button {
+    --background: #00796b;
+    --color: white;
+    --border-radius: 8px;
+  }
+  
+  ion-button:hover {
+    --background: #004d40;
+  }
+  

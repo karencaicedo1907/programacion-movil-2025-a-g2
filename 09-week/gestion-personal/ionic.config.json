@@ -1,0 +1,7 @@
+{
+  "name": "gestion-personal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

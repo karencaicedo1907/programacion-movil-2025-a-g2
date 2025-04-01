@@ -1,0 +1,104 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Gestión de Personal Médico</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <form [formGroup]="form">
+      
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="apellido"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" formControlName="edad"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="email" formControlName="correo"></ion-input>
+      </ion-item>
+
+      <!-- Campos dependientes de tipoPersonal -->
+      <ng-container *ngIf="tipoPersonal === 'medico'">
+        <ion-item>
+          <ion-label position="floating">Especialidad</ion-label>
+          <ion-input formControlName="especialidad"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Número de licencia médica</ion-label>
+          <ion-input formControlName="numeroLicencia"></ion-input>
+        </ion-item>
+      </ng-container>
+
+      <ng-container *ngIf="tipoPersonal === 'enfermero'">
+        <ion-item>
+          <ion-label position="floating">Turno asignado</ion-label>
+          <ion-input formControlName="turnoAsignado"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Área de atención</ion-label>
+          <ion-input formControlName="areaAtencion"></ion-input>
+        </ion-item>
+      </ng-container>
+
+      <ng-container *ngIf="tipoPersonal === 'recepcionista'">
+        <ion-item>
+          <ion-label position="floating">Horario laboral</ion-label>
+          <ion-input formControlName="horarioLaboral"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Extensión telefónica</ion-label>
+          <ion-input formControlName="extensionTelefonica"></ion-input>
+        </ion-item>
+      </ng-container>
+
+      <ng-container *ngIf="tipoPersonal === 'paciente'">
+        <ion-item>
+          <ion-label position="floating">Número de historia clínica</ion-label>
+          <ion-input formControlName="numeroHistoriaClinica"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Tipo de afiliación</ion-label>
+          <ion-input formControlName="tipoAfiliacion"></ion-input>
+        </ion-item>
+      </ng-container>
+
+      <!-- Botones de acción -->
+      <ion-button expand="full" (click)="ejecutarAccion('agregar')">Agregar</ion-button>
+      <ion-button expand="full" (click)="ejecutarAccion('modificar')">Modificar</ion-button>
+      <ion-button expand="full" (click)="ejecutarAccion('eliminar')">Eliminar</ion-button>
+      <ion-button expand="full" (click)="ejecutarAccion('consultar')">Consultar</ion-button>
+    </form>
+
+    <!-- Lista de personal gestionado -->
+    <ion-card *ngIf="listaPersonal.length > 0">
+      <ion-card-header>
+        <ion-card-title>Lista de Personal</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let persona of listaPersonal">
+            <ion-label>
+              <h2>{{ persona.nombre }} {{ persona.apellido }}</h2>
+              <p>Edad: {{ persona.edad }}</p>
+              <p>Correo: {{ persona.correo }}</p>
+              <p *ngIf="persona.tipo === 'medico'">Especialidad: {{ persona.especialidad }}</p>
+              <p *ngIf="persona.tipo === 'enfermero'">Turno: {{ persona.turnoAsignado }} | Área: {{ persona.areaAtencion }}</p>
+              <p *ngIf="persona.tipo === 'recepcionista'">Horario: {{ persona.horarioLaboral }} | Extensión: {{ persona.extensionTelefonica }}</p>
+              <p *ngIf="persona.tipo === 'paciente'">Historia Clínica: {{ persona.numeroHistoriaClinica }} | Afiliación: {{ persona.tipoAfiliacion }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-card-content>
+</ion-card>
