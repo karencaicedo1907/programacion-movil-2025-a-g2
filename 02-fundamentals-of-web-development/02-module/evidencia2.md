@@ -1,4 +1,4 @@
-# **Curso: Fundamentos del desarrollo web moderno**
+# **Curso: Desarrollo de sitios para la web**
 
 En este curso aprendí varias cosas sobre cómo funcionan las páginas web y una de las cosas más interesantes fue entender que el navegador es quien se encarga de leer el código HTML y mostrarlo con colores, estilos y formatos para que lo podamos ver bonito y ordenado. El HTML en sí es solo texto con etiquetas que indican qué hacer con cada parte, como si fuera una guía para el navegador.
 
